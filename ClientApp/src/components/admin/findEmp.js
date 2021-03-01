@@ -14,7 +14,7 @@ export class findEmp extends Component {
         return (
             <div id="wrapper">
                 <NAV/>
-                <div id="content-wrapper" class="d-flex flex-column">
+                <div id="content-wrapper" className="d-flex flex-column">
                     <TOPNAV/>
                     <SearchData/>
                 </div>

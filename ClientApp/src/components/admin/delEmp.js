@@ -12,9 +12,9 @@ export class delEmp extends Component {
     render() {
         return (
             <div id="wrapper">
-                <NAV></NAV>
-                <div id="content-wrapper" class="d-flex flex-column">
-                    <TOPNAV></TOPNAV>
+                <NAV/>
+                <div id="content-wrapper" className="d-flex flex-column">
+                    <TOPNAV/>
                 </div>
             </div>
         );

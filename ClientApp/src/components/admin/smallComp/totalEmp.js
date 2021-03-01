@@ -18,7 +18,7 @@ export default class TotalEmp extends Component {
                                 <div className="h5 mb-0 font-weight-bold text-gray-800">400</div>
                                 </div>
                             <div className="col-auto">
-                                <i className="fas fa-calendar fa-2x text-gray-300"></i>
+                                <i className="fas fa-calendar fa-2x text-gray-300"/>
                                 </div>
                             </div>
                         </div>

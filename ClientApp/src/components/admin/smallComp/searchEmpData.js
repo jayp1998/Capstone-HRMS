@@ -14,7 +14,7 @@ export default class SearchData extends Component {
                             aria-label="Search" aria-describedby="basic-addon2" />
                         <div className="input-group-append">
                             <button className="btn btn-primary" type="button">
-                                <i className="fas fa-search fa-sm"></i>
+                                <i className="fas fa-search fa-sm"/>
                             </button>
                         </div>
                     </div>
@@ -24,7 +24,7 @@ export default class SearchData extends Component {
                 </div>
                 <div className="card-body">
                     <div className="table-responsive">
-                        <table className="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
                             <thead>
                                 <tr>
                                     <th>ID</th>

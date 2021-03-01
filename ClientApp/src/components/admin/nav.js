@@ -13,7 +13,7 @@ export default class NAV extends Component {
                     <li className="nav-item active">                   
                         <div className="nav-item" >
                             <Link className="nav-link" to="/adminIndex">
-                            <i className="fas fa-fw fa-tachometer-alt"></i>
+                            <i className="fas fa-fw fa-tachometer-alt"/>
                                 <span>Dashboard</span>
                             </Link>
                         </div>
@@ -26,9 +26,10 @@ export default class NAV extends Component {
             </div>
 
                     <li className="nav-item">
+                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                     <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                             aria-expanded="true" aria-controls="collapsePages">
-                            <i className="fas fa-fw fa-folder"></i>
+                            <i className="fas fa-fw fa-folder"/>
                             <span>Employee Data</span>
                     </a>
                         <div id="collapsePages" className="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">

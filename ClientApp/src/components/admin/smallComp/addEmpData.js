@@ -6,16 +6,16 @@ export default class AddEmpData extends Component {
     }
     render() {
         return (
-            <div class="card o-hidden border-0 shadow-lg my-5">
-                <div class="card-body p-0">
-                    <div class="row">
-                        <form class="user">
-                            <div class="form-group row">
-                                <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <input type="text" class="form-control form-control-user" id="exampleFirstName"
+            <div className="card o-hidden border-0 shadow-lg my-5">
+                <div className="card-body p-0">
+                    <div className="row">
+                        <form className="user">
+                            <div className="form-group row">
+                                <div className="col-sm-6 mb-3 mb-sm-0">
+                                    <input type="text" className="form-control form-control-user" id="exampleFirstName"
                                         placeholder="First Name"/>
                                     </div>
-                                    <div class="col-sm-6">
+                                    <div className="col-sm-6">
                                         <input type="text" class="form-control form-control-user" id="exampleLastName"
                                             placeholder="Last Name"/>
                                     </div>
