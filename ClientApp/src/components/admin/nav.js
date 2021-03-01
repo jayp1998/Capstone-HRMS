@@ -41,6 +41,15 @@ export default class NAV extends Component {
                                 <Link className="collapse-item nav-link" to="/allEmp">All Emp</Link>
                             </div>
                         </div>
+                        <hr className="sidebar-divider" />
+                    </li>
+                    <li className="nav-item">
+                        <div className="nav-item" >
+                            <Link className="nav-link" to="/schedule">
+                                <i className="fas fa-fw fa-user-alt"/>
+                                <span>Employee Schedule</span>
+                            </Link>
+                        </div>
                     </li>
                 </ul>
             </nav>

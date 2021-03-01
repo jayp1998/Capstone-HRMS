@@ -1,5 +1,5 @@
 ﻿import React, {Component} from 'react';
-import {profile} from './img/profile.png';
+import profile from './img/profile.png';
 
 export default class TOPNAV extends Component {
     constructor(props) {

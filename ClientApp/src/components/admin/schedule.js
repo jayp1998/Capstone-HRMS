@@ -1,9 +1,10 @@
-﻿import React, {Component} from 'react';
+import React, {Component} from 'react';
 import NAV from './nav';
 import TOPNAV from './topnav';
-import AddEmpData from './smallComp/addEmpData';
+import ScheduleData from "./smallComp/scheduleData";
 
-export class addEmp extends Component {
+export class schedule extends Component {
+    // eslint-disable-next-line no-useless-constructor
     constructor(props) {
         super(props);
 
@@ -15,10 +16,18 @@ export class addEmp extends Component {
                 <NAV/>
                 <div id="content-wrapper" className="d-flex flex-column">
                     <TOPNAV/>
-                    <AddEmpData/>
+                    <ScheduleData/>
                 </div>
             </div>
-
         );
     }
 }
+
+
+
+
+
+
+
+
+
