@@ -1,5 +1,5 @@
 ﻿import React, {Component} from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import {Link} from 'react-router-dom';
 
 export default class EMPNAV extends Component {
     constructor(props) {
@@ -9,11 +9,27 @@ export default class EMPNAV extends Component {
 
     render() {
         return (
-            <header>
-                <nav>
-                    <h1>Nav Element FOR EMPLOYEE</h1>
-                </nav>
-            </header>
+            <nav className="admin__nav">
+                <ul className="menu">
+                    <li className="menu__title">Directories:</li>
+                    <br/>
+                    <li className="menu__item">
+                        <Link className="menu__link" to="/empIndex">My Profile</Link>
+                    </li>
+                        <li className="menu__item">
+                            <Link className="menu__link" to="/payroll">Payroll</Link>
+                        </li>
+                        <li className="menu__item">
+                            <Link className="menu__link" to="/leave">Leave Management</Link>
+                        </li>
+                        <li className="menu__item">
+                            <Link className="menu__link" to="/events">Events</Link>
+                        </li>
+                        <li className="menu__item">
+                            <Link className="menu__link" to="/holidays">Holidays</Link>
+                        </li>
+                </ul>
+            </nav>
         );
     }
 }

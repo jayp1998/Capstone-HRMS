@@ -10,6 +10,10 @@ const schedule = React.lazy(()=>import('./components/admin/schedule'));
 
 // COMPONENTS OF EMPLOYEE PANEL
 const empIndex = React.lazy(()=>import('./components/employee/empIndex'));
+const events = React.lazy(()=>import('./components/employee/events'));
+const leave = React.lazy(()=>import('./components/employee/leave'));
+const payroll = React.lazy(()=>import('./components/employee/payroll'));
+const holidays = React.lazy(()=>import('./components/employee/holidays'));
 
 const routes = [
     { path: '/', exact: true, name: 'Login' },
@@ -22,6 +26,10 @@ const routes = [
 
     // EMPLOYEE SECTIONS ROUTES
     { path: '/empIndex', name: 'empIndex', component: empIndex },
+    { path: '/events', name: 'empIndex', component: events },
+    { path: '/leave', name: 'empIndex', component: leave },
+    { path: '/payroll', name: 'empIndex', component: payroll },
+    { path: '/holidays', name: 'holidays', component: holidays },
 
 
 ];

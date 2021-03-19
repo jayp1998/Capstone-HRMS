@@ -4,6 +4,7 @@ import TOPNAV from './topnav';
 import AllEmpData from './smallComp/allEmpData';
 
 
+
 export class allEmp extends Component {
     constructor(props) {
         super(props);

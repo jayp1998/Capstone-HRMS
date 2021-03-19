@@ -5,6 +5,8 @@ import './css/fontawesome.css';
 import NAV from './nav';
 import TOPNAV from './topnav';
 import TotalEmp from './smallComp/totalEmp';
+import Broadcast from "./smallComp/broadcast";
+import NewMessages from "./smallComp/newMessages";
 
 export class adminIndex extends Component {
     constructor(props) {
@@ -20,8 +22,10 @@ export class adminIndex extends Component {
                     <div className="container-fluid">
                         <div className="row">
                             <TotalEmp/>
+                            <NewMessages/>
                         </div>
                     </div>
+                <Broadcast/>
                 </div>
             </div>
         );

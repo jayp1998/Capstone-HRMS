@@ -8,8 +8,8 @@ export default class SearchData extends Component {
     render() {
         return (
             <div className="card shadow mb-4">
-                <form className="col-md-6">
-                    <div className="input-group">
+                <form className="col-md-12">
+                    <div className="input-group col-md-4">
                         <input type="text" className="form-control bg-light border-0 small" placeholder="Search for..."
                             aria-label="Search" aria-describedby="basic-addon2" />
                         <div className="input-group-append">
@@ -18,7 +18,7 @@ export default class SearchData extends Component {
                             </button>
                         </div>
                     </div>
-                </form>
+
                 <div className="card-header py-3">
                     <h6 className="m-0 font-weight-bold text-primary">RESULTS</h6>
                 </div>
@@ -44,6 +44,7 @@ export default class SearchData extends Component {
                         </table>
                     </div>
                 </div>
+                </form>
             </div>
         );
     }
