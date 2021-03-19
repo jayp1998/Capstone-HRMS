@@ -51,6 +51,14 @@ export default class NAV extends Component {
                             </Link>
                         </div>
                     </li>
+                    <li className="nav-item">
+                        <div className="nav-item" >
+                            <Link className="nav-link" to="/message">
+                                <i className="fas fa-fw fa-comment"/>
+                                <span>Messages</span>
+                            </Link>
+                        </div>
+                    </li>
                 </ul>
             </nav>
         );
