@@ -9,7 +9,7 @@ import {addEmp} from './components/admin/addEmp';
 import {findEmp} from './components/admin/findEmp';
 import {delEmp} from './components/admin/delEmp';
 import {schedule} from "./components/admin/schedule";
-import {MessageList} from './components/admin/messageList'
+//import {MessageList} from './components/admin/messageList'
 //IMPORTS FOR EMPLOYEE PANEL
 import {empIndex} from './components/employee/empIndex';
 import {Events} from './components/employee/events';
@@ -32,8 +32,6 @@ export default class App extends Component {
                 <Route path='/findEmp' component={findEmp} />
                 <Route path='/delEmp' component={delEmp} />
                 <Route path='/schedule' component={schedule}/>
-                <Route path='/message' component={MessageList}/>
-
 
                 <Route path='/empIndex' component={empIndex} />
                 <Route path='/payroll' component={Payroll} />

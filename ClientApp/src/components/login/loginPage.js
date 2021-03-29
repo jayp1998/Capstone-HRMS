@@ -51,10 +51,9 @@ export class loginPage extends Component {
             username: this.state.username,
             password: this.state.password,
         }
-        axios.post("https://reqres.in/api/login", loginObject).then(result => {
+        axios.post("api/Users/login/", loginObject).then(result => {
             if (result.status === 200) {
-                localStorage.setItem('currentUser', JSON.stringify(result.data));
-                console.log("Login Completed");
+                console.log(result);
                 this.props.history.push("/adminIndex");
             } else {
                 this.props.history.push("/");
@@ -70,7 +69,7 @@ export class loginPage extends Component {
             username: this.state.username,
             password: this.state.password,
         }
-        axios.post("https://reqres.in/api/login", loginObject).then(result => {
+        axios.post("/api/login", loginObject).then(result => {
             if (result.status === 200) {
                 localStorage.setItem('currentUser', JSON.stringify(result.data));
                 console.log("Login Completed");

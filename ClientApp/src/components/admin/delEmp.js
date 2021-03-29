@@ -1,7 +1,7 @@
 ﻿import React, {Component} from 'react';
 import NAV from './nav';
 import TOPNAV from './topnav';
-import DeleteEmployee from "./smallComp/deleteEmployee";
+//import DeleteEmployee from "./smallComp/deleteEmployee";
 
 
 export class delEmp extends Component {
@@ -16,7 +16,6 @@ export class delEmp extends Component {
                 <NAV/>
                 <div id="content-wrapper" className="d-flex flex-column">
                     <TOPNAV/>
-                <DeleteEmployee/>
                 </div>
             </div>
         );

@@ -4,9 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using HRMS_Project.Data.Models;
-using Newtonsoft.Json;
+using HRMS_Project.Data.Services;
 
 namespace HRMS_Project.Controllers
 {
@@ -14,17 +13,19 @@ namespace HRMS_Project.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private readonly HRMSContext _context;
+        private readonly ApplicationDbContext _context;
+        private readonly IUserService _userService;
 
-        public UsersController(HRMSContext context)
+        public UsersController(ApplicationDbContext context, IUserService userService)
         {
             _context = context;
+            _userService = userService;
         }
 
         [HttpGet("[action]")]
         public IActionResult GetUsers()
         {
-            return Ok(_context.TblUsers.ToList());
+            return Ok();
         }
 
         [HttpPost("Login")]
@@ -32,12 +33,12 @@ namespace HRMS_Project.Controllers
         {
             if (user != null)
             {
-                var u = _context.TblUsers.Where(m => m.Username == user.Username && m.Password == user.Password).FirstOrDefault();
-                if (u != null)
-                {
-                    HttpContext.Session.SetString("LoggedInUser", JsonConvert.SerializeObject(u));
-                    return Ok(u);
-                }
+                //var u = _context.TblUsers.Where(m => m.Username == user.Username && m.Password == user.Password).FirstOrDefault();
+                //if (u != null)
+                //{
+                //    //HttpContext.Session.SetString("LoggedInUser", JsonConvert.SerializeObject(u));
+                //    return Ok(u);
+                //}
             }
             return Ok();
         }
@@ -53,80 +54,26 @@ namespace HRMS_Project.Controllers
             return NotFound();
         }
 
-
-        // GET: api/Users/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<TblUser>> GetTblUser(int id)
+        [HttpPost("register")]
+        public async Task<ActionResult> RegisterAsync(RegisterModel model)
         {
-            var tblUser = await _context.TblUsers.FindAsync(id);
 
-            if (tblUser == null)
-            {
-                return NotFound();
-            }
-
-            return tblUser;
+            var result = await _userService.RegisterAsync(model);
+            return Ok(result);
         }
 
-        // PUT: api/Users/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutTblUser(int id, TblUser tblUser)
+        [HttpPost("token")]
+        public async Task<IActionResult> GetTokenAsync(TokenRequestModel model)
         {
-            if (id != tblUser.UserId)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(tblUser).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!TblUserExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
+            var result = await _userService.GetTokenAsync(model);
+            return Ok(result);
         }
 
-        // POST: api/Users
-        [HttpPost]
-        public async Task<ActionResult<TblUser>> PostTblUser(TblUser tblUser)
+        [HttpPost("addrole")]
+        public async Task<IActionResult> AddRoleAsync(AddRoleModel model)
         {
-            _context.TblUsers.Add(tblUser);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetTblUser", new { id = tblUser.UserId }, tblUser);
-        }
-
-        // DELETE: api/Users/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteTblUser(int id)
-        {
-            var tblUser = await _context.TblUsers.FindAsync(id);
-            if (tblUser == null)
-            {
-                return NotFound();
-            }
-
-            _context.TblUsers.Remove(tblUser);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
-        }
-
-        private bool TblUserExists(int id)
-        {
-            return _context.TblUsers.Any(e => e.UserId == id);
+            var result = await _userService.AddRoleAsync(model);
+            return Ok(result);
         }
     }
 }
