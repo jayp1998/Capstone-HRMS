@@ -32,8 +32,9 @@ namespace HRMS_Project
             services.Configure<JWT>(Configuration.GetSection("JWT"));
 
             //User Manager Service
-            services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
             services.AddScoped<IUserService, UserService>();
+            services.AddTransient<IMailService, MailService>();
 
             //Adding DB Context with MSSQL
             //services.AddDbContext<HRMSContext>(options => options.UseSqlServer("Data Source=LAPTOP-Q2VFICDK;Initial Catalog=HRMS;Integrated Security=True"));
@@ -65,7 +66,8 @@ namespace HRMS_Project
                     };
                 });
 
-            services.AddControllersWithViews();
+            services.AddControllersWithViews().AddNewtonsoftJson(options =>
+        options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -77,6 +79,10 @@ namespace HRMS_Project
             {
                 options.IdleTimeout = TimeSpan.FromMinutes(1);
             });
+
+            //Mail configuration
+            services.Configure<MailSettings>(Configuration.GetSection("MailSettings"));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

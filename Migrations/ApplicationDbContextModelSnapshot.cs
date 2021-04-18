@@ -90,6 +90,27 @@ namespace HRMS_Project.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
+            modelBuilder.Entity("HRMS_Project.Data.Models.Tokens", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("JWT_Token")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Token_Type")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("User_Id")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tokens");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")

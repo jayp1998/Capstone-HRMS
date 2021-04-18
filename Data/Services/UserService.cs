@@ -1,6 +1,8 @@
 ﻿using HRMS_Project.Data.Constants;
 using HRMS_Project.Data.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -18,9 +20,11 @@ namespace HRMS_Project.Data.Services
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly JWT _jwt;
+        private readonly ApplicationDbContext _context;
 
-        public UserService(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IOptions<JWT> jwt)
+        public UserService(ApplicationDbContext context, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IOptions<JWT> jwt)
         {
+            _context = context;
             _userManager = userManager;
             _roleManager = roleManager;
             _jwt = jwt.Value;
@@ -44,7 +48,8 @@ namespace HRMS_Project.Data.Services
                     await _userManager.AddToRoleAsync(user, Authorization.default_role.ToString());
 
                 }
-                else {
+                else
+                {
                     return "error";
                 }
                 return $"User Registered with username {user.UserName}";
@@ -80,6 +85,7 @@ namespace HRMS_Project.Data.Services
             authenticationModel.Message = $"Incorrect Credentials for user {user.Email}.";
             return authenticationModel;
         }
+
         private async Task<JwtSecurityToken> CreateJwtToken(ApplicationUser user)
         {
             var userClaims = await _userManager.GetClaimsAsync(user);
@@ -133,7 +139,73 @@ namespace HRMS_Project.Data.Services
                 return $"Role {model.Role} not found.";
             }
             return $"Incorrect Credentials for user {user.Email}.";
+        }
 
+        public async Task<ApplicationUser> FindByEmailAsync(string email)
+        {
+            return await _userManager.FindByEmailAsync(email);
+        }
+
+        public async Task<string> GeneratePasswordResetTokenAsync(ApplicationUser user)
+        {
+            string token = await _userManager.GeneratePasswordResetTokenAsync(user);
+            if (token != null)
+            {
+                //delete if any token exists with the same user id
+                var q = _context.Tokens.Where(t => t.User_Id == user.Id && t.Token_Type == "reset").ToList();
+                foreach (var obj in q)
+                {
+                    _context.Remove(obj);
+                    _context.SaveChanges();
+                }
+
+                //add new reset token
+                var t = new Tokens()
+                {
+                    User_Id = user.Id,
+                    Token_Type = "reset",
+                    JWT_Token = token
+                };
+                _context.Tokens.Add(t);
+                await _context.SaveChangesAsync();
+
+                return token;
+            }
+            return null;
+        }
+
+        public string GetToken(string id, string token)
+        {
+            string email = string.Empty;
+
+            if (!string.IsNullOrEmpty(id) && !string.IsNullOrEmpty(token))
+            {
+                //LINQ Method
+                var q = _context.Tokens.Where(t => t.JWT_Token == token && t.User_Id == id && t.Token_Type == "reset").FirstOrDefault();
+                if (q != null)
+                {
+                    email = (new JwtSecurityTokenHandler().ReadToken(token) as JwtSecurityToken).Subject;
+                }
+            }
+            return email;
+        }
+
+        public async Task<bool> UpdatePasswordByEmailAsync(string token, ApplicationUser user, string newPassword)
+        {
+            var result = await _userManager.ResetPasswordAsync(user, token, newPassword);
+            if (result.Succeeded)
+            {
+                var x = (from y in _context.Tokens
+                         where y.User_Id == user.Id
+                         select y).FirstOrDefault();
+                if (x != null)
+                {
+                    _context.Tokens.Remove(x);
+                    _context.SaveChanges();
+                }
+                return true;
+            }
+            return false;
         }
     }
 }

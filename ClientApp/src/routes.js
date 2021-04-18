@@ -15,10 +15,13 @@ const empIndex = React.lazy(()=>import('./components/employee/empIndex'));
 const events = React.lazy(()=>import('./components/employee/events'));
 const leave = React.lazy(()=>import('./components/employee/leave'));
 const payroll = React.lazy(()=>import('./components/employee/payroll'));
-const holidays = React.lazy(()=>import('./components/employee/holidays'));
+const holidays = React.lazy(() => import('./components/employee/holidays'));
+
+const resetPassword  = React.lazy(() => import('./components/login/resetPassword'));
 
 const routes = [
     { path: '/', exact: true, name: 'Login' },
+    { path: '/resetPassword', name: 'resetPassword', component: resetPassword },
     { path: '/adminIndex', name: 'adminIndex', component: adminIndex },
     { path: '/allEmp', name: 'allEmp', component: allEmp },
     { path: '/addEmp', name: 'addEmp', component: addEmp },

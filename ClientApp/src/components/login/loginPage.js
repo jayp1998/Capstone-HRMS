@@ -3,7 +3,7 @@ import axios from 'axios';
 import PropTypes from 'prop-types';
 import './login.css'
 import logo from './logo.png';
-
+import { Link } from "react-router-dom";
 
 export class loginPage extends Component {
     constructor(props) {
@@ -12,11 +12,11 @@ export class loginPage extends Component {
         this.validateForm = this.validateForm.bind(this);
         this.adminButtonClicked = this.adminButtonClicked.bind(this);
         this.employeeButtonClicked = this.employeeButtonClicked.bind(this);
-        this.setUsername = this.setUsername.bind(this);
+        this.setEmail = this.setEmail.bind(this);
         this.setPassword = this.setPassword.bind(this);
 
         this.state = {
-            username: '',
+            email: '',
             password: '',
             errors: {}
         }
@@ -26,10 +26,9 @@ export class loginPage extends Component {
         router: PropTypes.object,
     }
 
-
-    setUsername(e) {
+    setEmail(e) {
         this.setState({
-            username: e.target.value
+            email: e.target.value
         });
     }
 
@@ -40,18 +39,16 @@ export class loginPage extends Component {
     }
 
     validateForm(e) {
-        return this.state.username.length > 0 && this.state.password.length > 0;
+        return this.state.email.length > 0 && this.state.password.length > 0;
     }
-
-
 
     adminButtonClicked(e) {
         e.preventDefault();
         let loginObject = {
-            username: this.state.username,
+            email: this.state.email,
             password: this.state.password,
         }
-        axios.post("api/Users/login/", loginObject).then(result => {
+        axios.post("api/Users/token/", loginObject).then(result => {
             if (result.status === 200) {
                 console.log(result);
                 this.props.history.push("/adminIndex");
@@ -69,7 +66,7 @@ export class loginPage extends Component {
             username: this.state.username,
             password: this.state.password,
         }
-        axios.post("/api/login", loginObject).then(result => {
+        axios.post("api/Users/token/", loginObject).then(result => {
             if (result.status === 200) {
                 localStorage.setItem('currentUser', JSON.stringify(result.data));
                 console.log("Login Completed");
@@ -84,7 +81,6 @@ export class loginPage extends Component {
 
     render() {
         return (
-
             <section>
                 <div className="limiter">
                     <div className="container-login100">
@@ -99,11 +95,11 @@ export class loginPage extends Component {
                                 <div className="wrap-input100">
                                     <input
                                         className="input100"
-                                        type="text"
-                                        name="username"
-                                        placeholder="UserName"
-                                        value={this.state.username}
-                                        onChange={this.setUsername}
+                                        type="email"
+                                        name="email"
+                                        placeholder="Email"
+                                        value={this.state.email}
+                                        onChange={this.setEmail}
                                         required />
                                 </div>
                                 <div className="wrap-input100" >
@@ -116,24 +112,14 @@ export class loginPage extends Component {
                                         onChange={this.setPassword}
                                         required />
                                 </div>
+                                <Link to="/login/resetPassword">Forgot password?</Link>
                                 <div className="container-login100-form-btn">
                                     <button
                                         id="employeeButton"
                                         className="login100-form-btn"
                                         onClick={this.employeeButtonClicked}
-                                        disabled={!this.validateForm()}
-                                    >
-                                        Employee
-                                    </button>
-                                </div>
-                                <div className="container-login100-form-btn">
-                                    <button
-                                        className="login100-form-btn"
-                                        id="adminButton"
-                                        onClick={this.adminButtonClicked}
-                                        disabled={!this.validateForm()}
-                                    >
-                                        Admin
+                                        disabled={!this.validateForm()}>
+                                        Login
                                     </button>
                                 </div>
                             </form>

@@ -12,5 +12,7 @@ namespace HRMS_Project.Data.Models
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
         }
+
+        public DbSet<Tokens> Tokens { get; set; }
     }
 }
