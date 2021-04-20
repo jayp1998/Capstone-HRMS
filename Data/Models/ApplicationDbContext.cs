@@ -14,5 +14,13 @@ namespace HRMS_Project.Data.Models
         }
 
         public DbSet<Tokens> Tokens { get; set; }
+        public DbSet<Department> Department { get; set; }
+        public DbSet<Designation> Designation { get; set; }
+        public DbSet<Employee> Employee { get; set; }
+        public DbSet<EducationDetail> EducationDetail { get; set; }
+        public DbSet<JobDetail> JobDetail { get; set; }
+        public DbSet<LeaveApplication> LeaveApplication { get; set; }
+        public DbSet<LeaveStatus> LeaveStatus { get; set; }
+        public DbSet<LeaveType> LeaveType { get; set; }
     }
 }

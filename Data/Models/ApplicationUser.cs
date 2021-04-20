@@ -10,5 +10,7 @@ namespace HRMS_Project.Data.Models
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
+
+        public virtual ICollection<Employee> Employee { get; set; }
     }
 }
