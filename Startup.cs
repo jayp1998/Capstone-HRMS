@@ -35,6 +35,7 @@ namespace HRMS_Project
             services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
             services.AddScoped<IUserService, UserService>();
             services.AddTransient<IMailService, MailService>();
+            services.AddTransient<IDepartmentService, DepartmentService>();
 
             //Adding DB Context with MSSQL
             //services.AddDbContext<HRMSContext>(options => options.UseSqlServer("Data Source=LAPTOP-Q2VFICDK;Initial Catalog=HRMS;Integrated Security=True"));
