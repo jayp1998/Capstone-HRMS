@@ -36,6 +36,7 @@ namespace HRMS_Project
             services.AddScoped<IUserService, UserService>();
             services.AddTransient<IMailService, MailService>();
             services.AddTransient<IDepartmentService, DepartmentService>();
+            services.AddTransient<IDesignationService, DesignationService>();
 
             //Adding DB Context with MSSQL
             //services.AddDbContext<HRMSContext>(options => options.UseSqlServer("Data Source=LAPTOP-Q2VFICDK;Initial Catalog=HRMS;Integrated Security=True"));
