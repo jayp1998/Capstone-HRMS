@@ -21,11 +21,32 @@ namespace HRMS_Project.Controllers
             _designationService = designationService;
         }
 
-        [HttpGet("[action]")]
-        public ActionResult<IEnumerable<Designation>> GetAllDesignations()
+        // [HttpGet("[action]")]
+        // public ActionResult<IEnumerable<Designation>> GetAllDesignations()
+        // {
+        //     return _designationService.GetAllDesignations();
+        // }
+        
+        ///api/Designation/GetAllDesignations
+         [HttpGet("[action]")]
+        public IActionResult GetAllDesignations()
         {
-            return _designationService.GetAllDesignations();
+             var result  = from designation in _context.Set<Designation>()
+              from dpt in _context.Set<Department>().Where(dpt => dpt.DepartmentId == designation.DepartmentId).DefaultIfEmpty()
+             select new {designation.DesignationId , designation.DesignationName,dpt.DepartmentName,dpt.DepartmentId};
+            return Ok(result);
         }
+
+        //api/Designation/GetDesignationByDeptId/1
+        [HttpGet("[action]/{DepartmentId}")]
+         public IActionResult GetDesignationByDeptId(int DepartmentId)
+        {
+             var result  = from designation in _context.Set<Designation>().Where(dpt => dpt.DepartmentId == DepartmentId)
+              from dpt in _context.Set<Department>().Where(dpt => dpt.DepartmentId == designation.DepartmentId).DefaultIfEmpty()
+             select new {designation.DesignationId , designation.DesignationName,dpt.DepartmentName,dpt.DepartmentId};
+            return Ok(result);
+        }
+
 
         //api/Designation/GetDesignationById/1
         [HttpGet("[action]/{id}")]
@@ -35,11 +56,23 @@ namespace HRMS_Project.Controllers
         }
 
         //api/Designation/GetDesignationByName/Web devloper
+        // [HttpGet("[action]/{name}")]
+        // public ActionResult<IEnumerable<Designation>> GetDesignationByName(string name)
+        // {
+        //     return _designationService.GetDesignationByName(name);
+        // }
+
+         //api/Designation/GetDesignationByName/Web
         [HttpGet("[action]/{name}")]
-        public ActionResult<IEnumerable<Designation>> GetDesignationByName(string name)
+        public IActionResult GetDesignationByName(string name)
         {
-            return _designationService.GetDesignationByName(name);
+           var result  = from designation in _context.Set<Designation>()
+              from dpt in _context.Set<Department>().Where(dpt => dpt.DepartmentId == designation.DepartmentId).DefaultIfEmpty()
+             select new {designation.DesignationId , designation.DesignationName,dpt.DepartmentName,dpt.DepartmentId};
+            return Ok(result.Where(d => d.DesignationName.Contains(name)));
         }
+
+
 
         [HttpPost("add")]
         public ActionResult<Designation> AddDesignation(Designation Designation)
