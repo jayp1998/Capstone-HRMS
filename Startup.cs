@@ -13,6 +13,7 @@ using HRMS_Project.Data.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Capstone_HRMS.Data.Services;
 
 namespace HRMS_Project
 {
@@ -37,6 +38,8 @@ namespace HRMS_Project
             services.AddTransient<IMailService, MailService>();
             services.AddTransient<IDepartmentService, DepartmentService>();
             services.AddTransient<IDesignationService, DesignationService>();
+            services.AddTransient<IEmployeeService, EmployeeService>();
+            services.AddTransient<ILeaveStatusService, LeaveStatusService>();
 
             //Adding DB Context with MSSQL
             //services.AddDbContext<HRMSContext>(options => options.UseSqlServer("Data Source=LAPTOP-Q2VFICDK;Initial Catalog=HRMS;Integrated Security=True"));
