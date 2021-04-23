@@ -27,16 +27,16 @@ namespace HRMS_Project.Controllers
             return _departmentService.GetAllDepartments();
         }
 
-        [HttpGet("[action]")]
+        [HttpGet("[action]/{id}")]
         public ActionResult<Department> GetDepartmentById(int id)
         {
             return _departmentService.GetDepartmentById(id);
         }
 
-        [HttpGet("[action]")]
-        public ActionResult<Department> GetDepartmentByTitle(string DepartmentName)
+         [HttpGet("[action]/{departmentName}")]
+        public ActionResult<Department> GetDepartmentByTitle(string departmentName)
         {
-            return _departmentService.GetDepartmentByName(DepartmentName);
+            return _departmentService.GetDepartmentByName(departmentName);
         }
 
         [HttpPost("add")]
@@ -67,7 +67,7 @@ namespace HRMS_Project.Controllers
             }
         }
 
-        [HttpDelete("delete")]
+       [HttpDelete("delete/{id}")]
         public bool DeleteDepartment(int id)
         {
             return _departmentService.DeleteDepartment(id);
