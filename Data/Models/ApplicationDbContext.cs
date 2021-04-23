@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Capstone_HRMS.Data.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -23,5 +24,7 @@ namespace HRMS_Project.Data.Models
         public DbSet<LeaveStatus> LeaveStatus { get; set; }
         public DbSet<LeaveType> LeaveType { get; set; }
         public DbSet<Holidays> Holidays { get; set; }
+        public DbSet<Attendance> Attendance { get; set; }
+
     }
 }

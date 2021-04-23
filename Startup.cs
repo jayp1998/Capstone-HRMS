@@ -43,6 +43,7 @@ namespace HRMS_Project
             services.AddTransient<ILeaveTypeService, LeaveTypeService>();
             services.AddTransient<ILeaveApplicationService, LeaveApplicationService>();
             services.AddTransient<IHolidaysService, HolidaysService>();
+            services.AddTransient<IAttendanceService, AttendanceService>();
 
             //Adding DB Context with MSSQL
             //services.AddDbContext<HRMSContext>(options => options.UseSqlServer("Data Source=LAPTOP-Q2VFICDK;Initial Catalog=HRMS;Integrated Security=True"));

@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
+using Capstone_HRMS.Data.Models;
 
 namespace HRMS_Project.Data.Models
 {
@@ -36,5 +37,7 @@ namespace HRMS_Project.Data.Models
         public virtual ICollection<EducationDetail> EducationDetail { get; set; }
         public virtual ICollection<JobDetail> JobDetail { get; set; }
         public virtual ICollection<LeaveApplication> LeaveApplication { get; set; }
+        public virtual ICollection<Attendance> Attendance { get; set; }
+        
     }
 }
