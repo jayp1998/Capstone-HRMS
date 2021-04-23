@@ -13,7 +13,7 @@ namespace HRMS_Project.Data.Models
         public int LeaveApplicationId { get; set; }
 
         [ForeignKey("EmployeeId")]
-        public int LeaveAppliedBy { get; set; }
+        public int EmployeeId { get; set; }
         public DateTime LeaveApplicationDate { get; set; }
 
         [ForeignKey("LeaveTypeId")]
