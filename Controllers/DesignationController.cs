@@ -98,7 +98,7 @@ namespace HRMS_Project.Controllers
             }
             else
             {
-                return UnprocessableEntity("Designation does not exist");
+                return UnprocessableEntity("Designation does not exist or Designation already exist in same department");
             }
         }
 

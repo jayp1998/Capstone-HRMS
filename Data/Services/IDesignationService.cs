@@ -19,7 +19,7 @@ namespace HRMS_Project.Data.Services
 
         Designation GetDesignationById(int Id);
 
-        bool DesignationExists(string DesignationName);
+        bool DesignationExists(Designation d);
 
         List<Designation> GetDesignationByName(string name);
     }

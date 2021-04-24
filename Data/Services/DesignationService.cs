@@ -20,7 +20,7 @@ namespace HRMS_Project.Data.Services
 
         public int AddDesignation(Designation d)
         {
-            if (!DesignationExists(d.DesignationName))
+            if (!DesignationExists(d))
             {
                 _context.Designation.Add(d);
                 _context.SaveChanges();
@@ -38,6 +38,10 @@ namespace HRMS_Project.Data.Services
             var result = GetDesignationById(d.DesignationId);
             if (result != null)
             {
+                 if (result.DesignationName != d.DesignationName || result.DepartmentId != d.DepartmentId  && DesignationExists(d))
+                {
+                    return null;
+                }
                 result.DesignationName = d.DesignationName;
 
                 _context.Entry(result).State = EntityState.Modified;
@@ -72,9 +76,9 @@ namespace HRMS_Project.Data.Services
             return _context.Designation.ToList();
         }
 
-        public bool DesignationExists(string DesignationName)
+        public bool DesignationExists(Designation d)
         {
-            return _context.Designation.Any(d => d.DesignationName == DesignationName);
+            return _context.Designation.Any(p => p.DesignationName == d.DesignationName && p.DepartmentId == d.DepartmentId);
         }
 
         public Designation GetDesignationById(int Id)

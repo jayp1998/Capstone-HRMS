@@ -11,8 +11,11 @@ namespace HRMS_Project.Data.Models
     {
         [Key]
         public int DesignationId { get; set; }
+
+        [Required]
         public string DesignationName { get; set; }
 
+        [Required]  
         [ForeignKey("DepartmentId")]
         public int DepartmentId { get; set; }
 
