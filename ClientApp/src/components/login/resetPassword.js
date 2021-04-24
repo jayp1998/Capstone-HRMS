@@ -60,6 +60,8 @@ export class resetPassword extends Component {
                                             onClick={this.ResetPassword}>
                                             Reset
                                         </button>
+                                        <br/>
+                                        <Link to="/">Back to Login</Link>
                                     </div>
                                 </form>
                             </div>
