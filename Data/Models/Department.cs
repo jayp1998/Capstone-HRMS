@@ -10,6 +10,8 @@ namespace HRMS_Project.Data.Models
     {
         [Key]
         public int DepartmentId { get; set; }
+
+        [Required]
         public string DepartmentName { get; set; }
 
         public virtual ICollection<Designation> Designation { get; set; }

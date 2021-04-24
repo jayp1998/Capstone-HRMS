@@ -40,8 +40,12 @@ namespace HRMS_Project.Data.Services
         public Department UpdateDepartment(Department d)
         {
             var result = GetDepartmentById(d.DepartmentId);
-            if (result != null && !DepartmentExists(d.DepartmentName))
+            if (result != null)
             {
+                if (result.DepartmentName != d.DepartmentName && DepartmentExists(d.DepartmentName))
+                {
+                    return null;
+                }
                 result.DepartmentName = d.DepartmentName;
 
                 _context.Entry(result).State = EntityState.Modified;
