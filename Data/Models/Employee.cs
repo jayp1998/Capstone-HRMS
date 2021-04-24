@@ -35,7 +35,7 @@ namespace HRMS_Project.Data.Models
         public int UserId { get; set; }
 
         public virtual ICollection<EducationDetail> EducationDetail { get; set; }
-        public virtual ICollection<JobDetail> JobDetail { get; set; }
+        public virtual ICollection<JobProfileDetail> JobProfileDetail { get; set; }
         public virtual ICollection<LeaveApplication> LeaveApplication { get; set; }
         public virtual ICollection<Attendance> Attendance { get; set; }
         

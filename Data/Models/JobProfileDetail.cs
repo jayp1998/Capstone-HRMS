@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace HRMS_Project.Data.Models
 {
-    public class JobDetail
+    public class JobProfileDetail
     {
         [Key]
-        public int JobDetailsId { get; set; }
+        public int JobProfileDetailId { get; set; }
 
         [ForeignKey("EmployeeId")]
         public int EmployeeId { get; set; }
