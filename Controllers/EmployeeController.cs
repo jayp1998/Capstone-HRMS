@@ -111,7 +111,7 @@ namespace HRMS_Project.Controllers
         [HttpPost("add")]
         public ActionResult<Employee> AddEmployee(Employee employee)
         {
-            int temp = _employeeService.AddEmployee(employee);
+            long temp = _employeeService.AddEmployee(employee);
             if (temp > 0)
             {
                 return CreatedAtAction(nameof(employee), new { id = temp }, employee);

@@ -6,15 +6,15 @@ namespace Capstone_HRMS.Data.Services
 {
     public interface IEmployeeService
     {
-        int AddEmployee(Employee d);
+        long AddEmployee(Employee d);
 
         Employee UpdateEmployee(Employee d);
 
-        bool DeleteEmployee(int id);
+        bool DeleteEmployee(long id);
 
         List<Employee> GetAllEmployees();
 
-        Employee GetEmployeeById(int Id);
+        Employee GetEmployeeById(long id);
 
         bool EmployeeExists(string EmployeeName);
 

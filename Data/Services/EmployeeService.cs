@@ -14,7 +14,7 @@ namespace Capstone_HRMS.Data.Services
             _context = context;
         }
 
-        public int AddEmployee(Employee emp)
+        public long AddEmployee(Employee emp)
         {
             if (!EmployeeExists(emp.Sin))
             {
@@ -29,7 +29,7 @@ namespace Capstone_HRMS.Data.Services
             }
         }
 
-        public bool DeleteEmployee(int id)
+        public bool DeleteEmployee(long id)
         {
             var result = GetEmployeeById(id);
             if (result != null)
@@ -55,9 +55,9 @@ namespace Capstone_HRMS.Data.Services
             return _context.Employee.ToList();
         }
 
-        public Employee GetEmployeeById(int Id)
+        public Employee GetEmployeeById(long id)
         {
-            return  _context.Employee.Where(e => e.EmployeeId == Id).FirstOrDefault();
+            return  _context.Employee.Where(e => e.EmployeeId == id).FirstOrDefault();
         }
 
         public Employee GetEmployeeByName(string name)
@@ -70,6 +70,10 @@ namespace Capstone_HRMS.Data.Services
            var result = GetEmployeeById(emp.EmployeeId);
             if (result != null)
             {
+                if (result.Sin != emp.Sin && EmployeeExists(emp.Sin))
+                {
+                    return null;
+                }
                  result.FirstName = emp.FirstName;
                  result.LastName = emp.LastName;
                  result.BirthDate = emp.BirthDate;
