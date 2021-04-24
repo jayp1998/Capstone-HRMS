@@ -68,8 +68,12 @@ namespace Capstone_HRMS.Data.Services
         public Attendance UpdateAttendance(Attendance d)
         {
              var result = GetAttendanceById(d.AttendanceId);
-            if (result != null && !AttendanceExists(d))
+            if (result != null)
             {
+                if ((result.EmployeeId != d.EmployeeId || result.Date != d.Date) && AttendanceExists(d) )
+                {
+                    return null;
+                }
                 result.Date = d.Date;
                 result.EmployeeId = d.EmployeeId;
                 result.PunchIn = d.PunchIn;
