@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Route} from 'react-router';
 import {Layout} from './components/Layout';
 import {loginPage} from './components/login/loginPage';
+import {resetPassword} from "./components/login/resetPassword";
 // IMPORTS FOR ADMIN PANEL
 import {adminIndex} from './components/admin/index';
 import {allEmp} from './components/admin/allEmp';
@@ -26,6 +27,7 @@ export default class App extends Component {
         return (
             <Layout>
                 <Route exact path='/' component={loginPage} />
+                <Route exact path='/resetPassword' component={resetPassword} />
                 <Route path='/adminIndex' component={adminIndex} />
                 <Route path='/allEmp' component={allEmp} />
                 <Route path='/addEmp' component={addEmp} />

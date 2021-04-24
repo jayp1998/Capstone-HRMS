@@ -5,6 +5,9 @@ import './login.css'
 import logo from './logo.png';
 import { Link } from "react-router-dom";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 export class loginPage extends Component {
     constructor(props) {
         super(props);
@@ -40,6 +43,7 @@ export class loginPage extends Component {
 
     validateForm(e) {
         return this.state.email.length > 0 && this.state.password.length > 0;
+
     }
 
     adminButtonClicked(e) {
@@ -61,7 +65,9 @@ export class loginPage extends Component {
     }
 
     employeeButtonClicked(e) {
+
         e.preventDefault();
+
         let loginObject = {
             username: this.state.username,
             password: this.state.password,
@@ -70,9 +76,27 @@ export class loginPage extends Component {
             if (result.status === 200) {
                 localStorage.setItem('currentUser', JSON.stringify(result.data));
                 console.log("Login Completed");
+                toast('Login Successfull..!!!', {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                });
                 this.props.history.push("/empIndex");
             } else {
                 this.props.history.push("/");
+                toast('Login Failed..!!!', {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                });
                 console.log("Login Failed");
             }
             console.log(result);
@@ -82,6 +106,17 @@ export class loginPage extends Component {
     render() {
         return (
             <section>
+                <ToastContainer
+                    position="top-center"
+                    autoClose={5000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                />
                 <div className="limiter">
                     <div className="container-login100">
                         <div className="wrap-login100">
@@ -112,7 +147,7 @@ export class loginPage extends Component {
                                         onChange={this.setPassword}
                                         required />
                                 </div>
-                                <Link to="/login/resetPassword">Forgot password?</Link>
+                                <Link to="/resetPassword">Forgot password?</Link>
                                 <div className="container-login100-form-btn">
                                     <button
                                         id="employeeButton"
