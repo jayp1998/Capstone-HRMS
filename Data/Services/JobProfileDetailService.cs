@@ -59,11 +59,6 @@ namespace Capstone_HRMS.Data.Services
             return  _context.JobProfileDetail.Where(e => e.JobProfileDetailId == id).FirstOrDefault();
         }
 
-        public List<JobProfileDetail> GetJobProfileDetailByLeaveAppliedBy(int id)
-        {
-           return  _context.JobProfileDetail.Where(e => e.EmployeeId == id).ToList();
-        }
-
         public JobProfileDetail UpdateJobProfileDetail(JobProfileDetail jobp)
         {
            var result = GetJobProfileDetailById(jobp.JobProfileDetailId);
