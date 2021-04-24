@@ -9997,7 +9997,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sadha\\.nuget\\packages\\": {}
+    "C:\\Users\\jayp0\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -10005,11 +10005,11 @@
       "projectUniqueName": "E:\\Capstone-HRMS\\HRMS-Project.csproj",
       "projectName": "HRMS-Project",
       "projectPath": "E:\\Capstone-HRMS\\HRMS-Project.csproj",
-      "packagesPath": "C:\\Users\\sadha\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\jayp0\\.nuget\\packages\\",
       "outputPath": "E:\\Capstone-HRMS\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\sadha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\jayp0\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

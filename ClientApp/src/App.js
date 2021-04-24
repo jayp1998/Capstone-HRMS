@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import {Route} from 'react-router';
+
 import {Layout} from './components/Layout';
 import {loginPage} from './components/login/loginPage';
 import {resetPassword} from "./components/login/resetPassword";
+import { Switch, Route } from 'react-router-dom';
 // IMPORTS FOR ADMIN PANEL
 import {adminIndex} from './components/admin/index';
 import {allEmp} from './components/admin/allEmp';
@@ -25,7 +26,7 @@ export default class App extends Component {
 
     render() {
         return (
-            <Layout>
+            <Switch>
                 <Route exact path='/' component={loginPage} />
                 <Route exact path='/resetPassword' component={resetPassword} />
                 <Route path='/adminIndex' component={adminIndex} />
@@ -40,7 +41,7 @@ export default class App extends Component {
                 <Route path='/events' component={Events} />
                 <Route path='/leave' component={Leave} />
                 <Route path='/holidays' component={Holidays} />
-            </Layout>
+            </Switch>
         );
     }
 }
