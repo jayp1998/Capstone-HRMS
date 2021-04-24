@@ -10,7 +10,7 @@ namespace HRMS_Project.Data.Models
     public class EducationDetail
     {
         [Key]
-        public int EducationDetailsId { get; set; }
+        public int EducationDetailId { get; set; }
 
         [ForeignKey("EmployeeId")]
         public int EmployeeId { get; set; }
