@@ -100,9 +100,9 @@ namespace HRMS_Project.Controllers
             return Ok(result.Where(leaveApp => leaveApp.LeaveAppliedTo == id));
         }
 
-         ///api/LeaveApplication/add
+        //api/LeaveApplication/add
         [HttpPost("add")]
-        public ActionResult<LeaveApplication> AddEmployee(LeaveApplication leaveApp)
+        public ActionResult<LeaveApplication> AddLeaveApplication(LeaveApplication leaveApp)
         {
             int temp = _leaveApplicationService.AddLeaveApplication(leaveApp);
             if (temp > 0)
@@ -117,7 +117,7 @@ namespace HRMS_Project.Controllers
 
         ///api/LeaveApplication/update
         [HttpPut("update")]
-        public ActionResult<LeaveApplication> UpdateEmployee(LeaveApplication leaveApp)
+        public ActionResult<LeaveApplication> UpdateLeaveApplication(LeaveApplication leaveApp)
         {
             var e = _leaveApplicationService.UpdateLeaveApplication(leaveApp);
             if (e != null)
