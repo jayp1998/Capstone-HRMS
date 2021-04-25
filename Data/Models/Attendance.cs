@@ -8,7 +8,7 @@ namespace Capstone_HRMS.Data.Models
     public class Attendance
     {
         [Key]
-        public int AttendanceId { get; set; }
+        public long AttendanceId { get; set; }
 
         [Required]
 

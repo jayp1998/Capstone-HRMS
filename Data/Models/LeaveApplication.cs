@@ -10,7 +10,7 @@ namespace HRMS_Project.Data.Models
     public class LeaveApplication
     {
         [Key]
-        public int LeaveApplicationId { get; set; }
+        public long LeaveApplicationId { get; set; }
 
         [Required]
         [ForeignKey("EmployeeId")]

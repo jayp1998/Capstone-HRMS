@@ -13,7 +13,7 @@ namespace Capstone_HRMS.Data.Services
         {
             _context = context;
         }
-        public int AddLeaveApplication(LeaveApplication d)
+        public long AddLeaveApplication(LeaveApplication d)
         {
             if (!LeaveApplicationExists(d))
             {
@@ -28,7 +28,7 @@ namespace Capstone_HRMS.Data.Services
             }
         }
 
-        public bool DeleteLeaveApplication(int id)
+        public bool DeleteLeaveApplication(long id)
         {
             var result = GetLeaveApplicationById(id);
             if (result != null)
@@ -54,7 +54,7 @@ namespace Capstone_HRMS.Data.Services
             return _context.LeaveApplication.ToList();
         }
 
-        public LeaveApplication GetLeaveApplicationById(int id)
+        public LeaveApplication GetLeaveApplicationById(long id)
         {
             return  _context.LeaveApplication.Where(e => e.LeaveApplicationId == id).FirstOrDefault();
         }
@@ -102,5 +102,6 @@ namespace Capstone_HRMS.Data.Services
         {
             return  _context.LeaveApplication.Where(e => e.LeaveAppliedTo == id).ToList();
         }
+    
     }
 }

@@ -104,7 +104,7 @@ namespace HRMS_Project.Controllers
         [HttpPost("add")]
         public ActionResult<LeaveApplication> AddLeaveApplication(LeaveApplication leaveApp)
         {
-            int temp = _leaveApplicationService.AddLeaveApplication(leaveApp);
+            long temp = _leaveApplicationService.AddLeaveApplication(leaveApp);
             if (temp > 0)
             {
                 return CreatedAtAction(nameof(leaveApp), new { id = temp }, leaveApp);

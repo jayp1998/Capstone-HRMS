@@ -6,15 +6,15 @@ namespace Capstone_HRMS.Data.Services
 {
     public interface ILeaveApplicationService
     {
-        int AddLeaveApplication(LeaveApplication d);
+        long AddLeaveApplication(LeaveApplication d);
 
         LeaveApplication UpdateLeaveApplication(LeaveApplication d);
 
-        bool DeleteLeaveApplication(int id);
+        bool DeleteLeaveApplication(long id);
 
         List<LeaveApplication> GetAllLeaveApplications();
 
-        LeaveApplication GetLeaveApplicationById(int id);
+        LeaveApplication GetLeaveApplicationById(long id);
 
         bool LeaveApplicationExists(LeaveApplication d);
         List<LeaveApplication> GetLeaveApplicationByLeaveAppliedBy(long id);
