@@ -7,6 +7,7 @@ import TOPNAV from './topnav';
 import TotalEmp from './smallComp/totalEmp';
 import Broadcast from "./smallComp/broadcast";
 import NewMessages from "./smallComp/newMessages";
+import AddHoliday from "./smallComp/AddHoliday";
 
 export class adminIndex extends Component {
     constructor(props) {
@@ -23,9 +24,14 @@ export class adminIndex extends Component {
                         <div className="row">
                             <TotalEmp/>
                             <NewMessages/>
+
                         </div>
                     </div>
-                <Broadcast/>
+                    <div className="row">
+                        <Broadcast/>
+                        <AddHoliday/>
+                    </div>
+
                 </div>
             </div>
         );
