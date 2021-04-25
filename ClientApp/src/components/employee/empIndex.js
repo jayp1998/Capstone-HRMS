@@ -9,6 +9,7 @@ import EmployeeDetails from "./smallComp/employeeDetails";
 import Leaveleft from "./smallComp/Leaveleft";
 import SendMessage from "./smallComp/sendMessage";
 import MessageFromAdmin from "./smallComp/MessageFromAdmin";
+import Myschedule from "./smallComp/myschedule";
 
 export class empIndex extends Component {
     constructor(props) {
@@ -27,13 +28,19 @@ export class empIndex extends Component {
                 <Header/>
                 <EMPNAV/>
                 <div className="admin__main">
+
                     <EmployeeDetails/>
+                    <div className="col-xl-12 col-lg-5">
                     <div className="row">
                         <Leaveleft/>
+                        <Myschedule/>
                     </div>
+                    </div>
+                    <div className="col-xl-12 col-lg-5">
                     <div className="row">
                         <SendMessage/>
                         <MessageFromAdmin/>
+                    </div>
                     </div>
                 </div>
             <Footer/>

@@ -11,6 +11,7 @@ import {delEmp} from './components/admin/delEmp';
 import {schedule} from "./components/admin/schedule";
 import {LeaveManagement} from "./components/admin/leaveManagement";
 import {AddPayroll} from "./components/admin/AddPayroll";
+import {MainSchedule} from "./components/employee/MainSchedule";
 //import {MessageList} from './components/admin/messageList'
 //IMPORTS FOR EMPLOYEE PANEL
 import {empIndex} from './components/employee/empIndex';
@@ -43,6 +44,7 @@ export default class App extends Component {
                 <Route path='/events' component={Events} />
                 <Route path='/leave' component={Leave} />
                 <Route path='/holidays' component={Holidays} />
+                <Route path='/myschedule' component={MainSchedule} />
             </Switch>
         );
     }

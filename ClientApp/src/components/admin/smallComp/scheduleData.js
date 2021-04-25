@@ -32,6 +32,15 @@ export default class ScheduleData extends Component {
                                     </select>
                                 </div>
                             </div>
+                            <div className="form-group row justify-content-center">
+                                <div className="col-sm-6 mb-3 mb-sm-0">
+                                    <label htmlFor="1833993761">Date</label>
+                                    <div className="form-group">
+                                        <input type="date" id="date" placeholder="Select Date"
+                                               className="form-control" required/>
+                                    </div>
+                                </div>
+                            </div>
                             <div className="form-group row  justify-content-center">
                                 <div className="col-sm-6 mb-3 mb-sm-0">
                                     <input type="text" className="form-control form-control-user"

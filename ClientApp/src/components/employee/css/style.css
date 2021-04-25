@@ -14,11 +14,13 @@
 *::before,
 *::after {
   box-sizing: border-box;
+
 }
 
 body {
   height: 100%;
   overflow-x: hidden;
+  font-family: 'Roboto', -serif !important;
 }
 
 .admin {
@@ -164,6 +166,7 @@ img {
   padding: 10px 30px;
   color: #76808f;
   text-decoration: none;
+  font-size: 20px;
 }
 .menu__link.is-active {
   color: #fff;
