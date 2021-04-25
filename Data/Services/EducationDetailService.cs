@@ -44,7 +44,7 @@ namespace Capstone_HRMS.Data.Services
             }
         }
 
-         public bool EducationDetailExists(int id) 
+         public bool EducationDetailExists(long id) 
         {
              return _context.EducationDetail.Any(e => e.EmployeeId == id);
         }
@@ -91,9 +91,10 @@ namespace Capstone_HRMS.Data.Services
             }
         }
 
-        public List<EducationDetail> GetEducationDetailByEmpID(int id)
+        public List<EducationDetail> GetEducationDetailByEmpID(long id)
         {
             return  _context.EducationDetail.Where(e => e.EmployeeId == id).ToList();
         }
+
     }
 }

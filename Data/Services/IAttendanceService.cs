@@ -5,17 +5,17 @@ namespace Capstone_HRMS.Data.Services
 {
     public interface IAttendanceService
     {
-         int AddAttendance(Attendance d);
+         long AddAttendance(Attendance d);
 
         Attendance UpdateAttendance(Attendance d);
 
-        bool DeleteAttendance(int id);
+        bool DeleteAttendance(long id);
 
         List<Attendance> GetAllAttendance();
 
-        Attendance GetAttendanceById(int Id);
+        Attendance GetAttendanceById(long Id);
 
-         List<Attendance> GetAttendanceByEmpId(int Id);
+         List<Attendance> GetAttendanceByEmpId(long Id);
 
     }
 }

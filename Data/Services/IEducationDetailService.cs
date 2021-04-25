@@ -15,9 +15,9 @@ namespace Capstone_HRMS.Data.Services
 
         EducationDetail GetEducationDetailById(int id);
 
-        List<EducationDetail> GetEducationDetailByEmpID(int id);
+        List<EducationDetail> GetEducationDetailByEmpID(long id);
 
-        bool EducationDetailExists(int id);
+        bool EducationDetailExists(long id);
         
     }
 }

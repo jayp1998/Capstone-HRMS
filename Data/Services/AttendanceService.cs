@@ -13,7 +13,7 @@ namespace Capstone_HRMS.Data.Services
         {
             _context = context;
         }
-        public int AddAttendance(Attendance d)
+        public long AddAttendance(Attendance d)
         {
              if (!AttendanceExists(d))
             {
@@ -28,7 +28,7 @@ namespace Capstone_HRMS.Data.Services
             }
         }
 
-        public bool DeleteAttendance(int id)
+        public bool DeleteAttendance(long id)
         {
             var result = GetAttendanceById(id);
             if (result != null)
@@ -49,12 +49,12 @@ namespace Capstone_HRMS.Data.Services
             return _context.Attendance.ToList();
         }
 
-        public Attendance GetAttendanceById(int Id)
+        public Attendance GetAttendanceById(long Id)
         {
             Attendance result = _context.Attendance.Where(e => e.AttendanceId == Id).FirstOrDefault();
             return result;
         }
-        public List<Attendance> GetAttendanceByEmpId(int id)
+        public List<Attendance> GetAttendanceByEmpId(long id)
         {
             return  _context.Attendance.Where(e => e.EmployeeId == id).ToList();
            

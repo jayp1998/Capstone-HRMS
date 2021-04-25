@@ -59,7 +59,7 @@ namespace Capstone_HRMS.Data.Services
             return  _context.LeaveApplication.Where(e => e.LeaveApplicationId == id).FirstOrDefault();
         }
 
-        public List<LeaveApplication> GetLeaveApplicationByLeaveAppliedBy(int id)
+        public List<LeaveApplication> GetLeaveApplicationByLeaveAppliedBy(long id)
         {
            return  _context.LeaveApplication.Where(e => e.EmployeeId == id).ToList();
         }
@@ -98,7 +98,7 @@ namespace Capstone_HRMS.Data.Services
             }
         }
 
-        public List<LeaveApplication> GetLeaveApplicationByLeaveAppliedTo(int id)
+        public List<LeaveApplication> GetLeaveApplicationByLeaveAppliedTo(long id)
         {
             return  _context.LeaveApplication.Where(e => e.LeaveAppliedTo == id).ToList();
         }

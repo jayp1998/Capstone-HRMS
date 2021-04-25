@@ -17,7 +17,7 @@ namespace Capstone_HRMS.Data.Services
         LeaveApplication GetLeaveApplicationById(int id);
 
         bool LeaveApplicationExists(LeaveApplication d);
-        List<LeaveApplication> GetLeaveApplicationByLeaveAppliedBy(int id);
-        List<LeaveApplication> GetLeaveApplicationByLeaveAppliedTo(int id);
+        List<LeaveApplication> GetLeaveApplicationByLeaveAppliedBy(long id);
+        List<LeaveApplication> GetLeaveApplicationByLeaveAppliedTo(long id);
     }
 }

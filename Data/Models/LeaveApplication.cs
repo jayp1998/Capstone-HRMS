@@ -13,7 +13,7 @@ namespace HRMS_Project.Data.Models
         public int LeaveApplicationId { get; set; }
 
         [ForeignKey("EmployeeId")]
-        public int EmployeeId { get; set; }
+        public long EmployeeId { get; set; }
         public DateTime LeaveApplicationDate { get; set; }
 
         [ForeignKey("LeaveTypeId")]
@@ -24,14 +24,14 @@ namespace HRMS_Project.Data.Models
         public int? Hours { get; set; }
 
         [ForeignKey("EmployeeId")]
-        public int LeaveAppliedTo { get; set; }
+        public long LeaveAppliedTo { get; set; }
 
         [ForeignKey("LeaveStatusId")]
         public int LeaveStatusId { get; set; }
         public string Comment { get; set; }
 
         [ForeignKey("EmployeeId")]
-        public int LeaveStatusUpdatedBy { get; set; }
+        public long LeaveStatusUpdatedBy { get; set; }
 
         public DateTime LeaveStatusUpdatedAt { get; set; }
     }

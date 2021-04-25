@@ -76,7 +76,7 @@ namespace HRMS_Project.Data.Models
         public string Facebook { get; set; }
 
         [ForeignKey("Id")]
-        public long UserId { get; set; }
+        public int UserId { get; set; }
 
         public virtual ICollection<EducationDetail> EducationDetail { get; set; }
         public virtual ICollection<JobProfileDetail> JobProfileDetail { get; set; }

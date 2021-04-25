@@ -60,7 +60,7 @@ namespace Capstone_HRMS.Controllers
         [HttpPost("add")]
         public ActionResult<Attendance> AddAttendance(Attendance Attendance)
         {
-            int temp = _AttendanceService.AddAttendance(Attendance);
+            long temp = _AttendanceService.AddAttendance(Attendance);
             if (temp > 0)
             {
                 return CreatedAtAction(nameof(Attendance), new { id = temp }, Attendance);

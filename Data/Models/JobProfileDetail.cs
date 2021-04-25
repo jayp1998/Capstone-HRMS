@@ -15,10 +15,11 @@ namespace HRMS_Project.Data.Models
 
         [Required]
         [ForeignKey("EmployeeId")]
-        public int EmployeeId { get; set; }
+        public long EmployeeId { get; set; }
         
         [Required]
-        public int ReportsTo { get; set; }
+         [ForeignKey("EmployeeId")]
+        public long ReportsTo { get; set; }
 
         [Required]
         [DataType(DataType.Date)]

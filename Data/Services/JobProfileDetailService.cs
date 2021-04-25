@@ -44,7 +44,7 @@ namespace Capstone_HRMS.Data.Services
             }
         }
 
-         public bool JobProfileDetailExists(int id) 
+         public bool JobProfileDetailExists(long id) 
         {
              return _context.JobProfileDetail.Any(j => j.EmployeeId == id);
         }
@@ -88,7 +88,7 @@ namespace Capstone_HRMS.Data.Services
             }
         }
 
-        public List<JobProfileDetail> GetJobProfileDetailByEmpID(int id)
+        public List<JobProfileDetail> GetJobProfileDetailByEmpID(long id)
         {
             return  _context.JobProfileDetail.Where(e => e.EmployeeId == id).ToList();
         }

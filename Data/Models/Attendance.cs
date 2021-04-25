@@ -13,7 +13,7 @@ namespace Capstone_HRMS.Data.Models
         [Required]
 
         [ForeignKey("EmployeeId")]
-         public int EmployeeId { get; set; }
+         public long EmployeeId { get; set; }
 
          [Required]
         public DateTime Date { get; set; }

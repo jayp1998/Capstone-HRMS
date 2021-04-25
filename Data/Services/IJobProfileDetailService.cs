@@ -15,9 +15,9 @@ namespace Capstone_HRMS.Data.Services
 
         JobProfileDetail GetJobProfileDetailById(int id);
 
-        List<JobProfileDetail> GetJobProfileDetailByEmpID(int id);
+        List<JobProfileDetail> GetJobProfileDetailByEmpID(long id);
 
-        bool JobProfileDetailExists(int id);
+        bool JobProfileDetailExists(long id);
         
     }
 }
