@@ -8,6 +8,7 @@ import TotalEmp from './smallComp/totalEmp';
 import Broadcast from "./smallComp/broadcast";
 import NewMessages from "./smallComp/newMessages";
 import AddHoliday from "./smallComp/AddHoliday";
+import PayrollUpadate from "./smallComp/payrollUpadate";
 
 export class adminIndex extends Component {
     constructor(props) {
@@ -24,7 +25,7 @@ export class adminIndex extends Component {
                         <div className="row">
                             <TotalEmp/>
                             <NewMessages/>
-
+                            <PayrollUpadate/>
                         </div>
                     </div>
                     <div className="row">

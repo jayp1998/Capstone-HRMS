@@ -10,6 +10,7 @@ import {findEmp} from './components/admin/findEmp';
 import {delEmp} from './components/admin/delEmp';
 import {schedule} from "./components/admin/schedule";
 import {LeaveManagement} from "./components/admin/leaveManagement";
+import {AddPayroll} from "./components/admin/AddPayroll";
 //import {MessageList} from './components/admin/messageList'
 //IMPORTS FOR EMPLOYEE PANEL
 import {empIndex} from './components/employee/empIndex';
@@ -35,6 +36,7 @@ export default class App extends Component {
                 <Route path='/delEmp' component={delEmp} />
                 <Route path='/schedule' component={schedule}/>
                 <Route path='/leaveManagement' component={LeaveManagement}/>
+                <Route path='/UpdatePayroll' component={AddPayroll}/>
 
                 <Route path='/empIndex' component={empIndex} />
                 <Route path='/payroll' component={Payroll} />

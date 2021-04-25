@@ -1,4 +1,5 @@
 import React from 'react';
+import {AddPayroll} from "./components/admin/AddPayroll";
 
 // COMPONENTS OF ADMIN PANEL
 const adminIndex = React.lazy(() => import('./components/admin/index'));
@@ -8,6 +9,7 @@ const findEmp = React.lazy(() => import('./components/admin/findEmp'));
 const delEmp = React.lazy(() => import('./components/admin/delEmp'));
 const schedule = React.lazy(()=>import('./components/admin/schedule'));
 const leaveManagement = React.lazy(()=>import('./components/admin/leaveManagement'));
+const UpdatePayroll = React.lazy(()=>import('./components/admin/AddPayroll'));
 //const messagefromemployee = React.lazy(()=>import('./components/admin/messageList'));
 
 
@@ -30,6 +32,8 @@ const routes = [
     { path: '/delEmp', name: 'delEmp', component: delEmp },
     { path: '/schedule', name: 'schedule', component: schedule },
     { path: '/leaveManagement', name: 'schedule', component: leaveManagement },
+    { path: '/UpdatePayroll', name: 'schedule', component: UpdatePayroll },
+
 
     //{ path: '/message', name: 'message', component: messagefromemployee},
 
