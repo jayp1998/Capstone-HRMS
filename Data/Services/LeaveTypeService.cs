@@ -71,6 +71,10 @@ namespace Capstone_HRMS.Data.Services
              var result = GetLeaveTypeById(d.LeaveTypeId);
             if (result != null)
             {
+                if (result.TypeName != d.TypeName && LeaveTypeExists(d.TypeName))
+                {
+                    return null;
+                }
                 result.TypeName = d.TypeName;
                 result.NumberOfHours = d.NumberOfHours;
                 

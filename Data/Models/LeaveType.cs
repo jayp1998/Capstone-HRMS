@@ -10,6 +10,9 @@ namespace HRMS_Project.Data.Models
     {
         [Key]
         public int LeaveTypeId { get; set; }
+
+        [Required]
+        [StringLength(100)]
         public string TypeName { get; set; }
         public int? NumberOfHours { get; set; }
 
