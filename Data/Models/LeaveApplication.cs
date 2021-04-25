@@ -46,6 +46,8 @@ namespace HRMS_Project.Data.Models
         [ForeignKey("LeaveStatusId")]
         public int LeaveStatusId { get; set; }
 
+
+        [StringLength(1000)]
         public string Comment { get; set; }
 
         [ForeignKey("EmployeeId")]
