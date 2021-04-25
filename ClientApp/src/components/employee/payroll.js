@@ -16,12 +16,11 @@ export class Payroll extends Component {
                 <Header/>
                 <EMPNAV/>
                 <div className="admin__main">
-                    <p className="h3 d-flex justify-content-center">Payroll History</p>
-                    <div className="col-xl-12 col-lg-5 d-flex justify-content-center">
-                        <div className="card shadow col-md-8" ref={ref}>
+                    <div className="col-xl-12 col-lg-5" ref={ref}>
+                        <div className="card shadow mb-4">
                             <div
-                                className="card-header d-flex flex-row align-items-center justify-content-between">
-                                <h6 className="col-md-8 font-weight-bold text-primary">This Month Pay</h6>
+                                className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 className="m-0 font-weight-bold text-primary">Payroll</h6>
                             </div>
                             <div className="card-body">
                                 <div className="row h3">

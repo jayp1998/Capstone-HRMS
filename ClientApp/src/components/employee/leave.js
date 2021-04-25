@@ -13,10 +13,14 @@ export class Leave extends Component {
             <div className="admin">
                 <Header/>
                 <EMPNAV/>
-                <main className="admin__main">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-8">
+                <div className="admin__main">
+                    <div className="col-xl-8 col-lg-5">
+                        <div className="card shadow mb-4">
+                            <div
+                                className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 className="m-0 font-weight-bold text-primary">Leave Management</h6>
+                            </div>
+                            <div className="card-body">
                                 <form>
                                     <div className="form-group">
                                         <label htmlFor="name">Name*</label>
@@ -78,13 +82,16 @@ export class Leave extends Component {
 
                                     <button type="submit" className="btn btn-info">Submit</button>
                                 </form>
+
                             </div>
                         </div>
                     </div>
-                </main>
+                </div>
                 <Footer/>
             </div>
 
         );
     }
 }
+
+
