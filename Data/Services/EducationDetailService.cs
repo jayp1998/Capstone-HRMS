@@ -13,7 +13,7 @@ namespace Capstone_HRMS.Data.Services
         {
             _context = context;
         }
-        public int AddEducationDetail(EducationDetail d)
+        public long AddEducationDetail(EducationDetail d)
         {
             if (!EducationDetailExists(d.EmployeeId))
             {
@@ -28,7 +28,7 @@ namespace Capstone_HRMS.Data.Services
             }
         }
 
-        public bool DeleteEducationDetail(int id)
+        public bool DeleteEducationDetail(long id)
         {
             var result = GetEducationDetailById(id);
             if (result != null)
@@ -54,7 +54,7 @@ namespace Capstone_HRMS.Data.Services
             return _context.EducationDetail.ToList();
         }
 
-        public EducationDetail GetEducationDetailById(int id)
+        public EducationDetail GetEducationDetailById(long id)
         {
             return  _context.EducationDetail.Where(e => e.EducationDetailId == id).FirstOrDefault();
         }

@@ -68,7 +68,7 @@ namespace Capstone_HRMS.Controllers
         [HttpPost("add")]
         public ActionResult<JobProfileDetail> AddJobProfileDetail(JobProfileDetail leaveApp)
         {
-            int temp = _JobProfileDetailService.AddJobProfileDetail(leaveApp);
+            long temp = _JobProfileDetailService.AddJobProfileDetail(leaveApp);
             if (temp > 0)
             {
                 return CreatedAtAction(nameof(leaveApp), new { id = temp }, leaveApp);

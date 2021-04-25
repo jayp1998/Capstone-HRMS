@@ -11,7 +11,7 @@ namespace HRMS_Project.Data.Models
     {
         [Required]
         [Key]
-        public int JobProfileDetailId { get; set; }
+        public long JobProfileDetailId { get; set; }
 
         [Required]
         [ForeignKey("EmployeeId")]

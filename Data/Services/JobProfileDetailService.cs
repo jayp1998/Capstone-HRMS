@@ -13,7 +13,7 @@ namespace Capstone_HRMS.Data.Services
         {
             _context = context;
         }
-        public int AddJobProfileDetail(JobProfileDetail d)
+        public long AddJobProfileDetail(JobProfileDetail d)
         {
             if (!JobProfileDetailExists(d.EmployeeId))
             {
@@ -28,7 +28,7 @@ namespace Capstone_HRMS.Data.Services
             }
         }
 
-        public bool DeleteJobProfileDetail(int id)
+        public bool DeleteJobProfileDetail(long id)
         {
             var result = GetJobProfileDetailById(id);
             if (result != null)
@@ -54,7 +54,7 @@ namespace Capstone_HRMS.Data.Services
             return _context.JobProfileDetail.ToList();
         }
 
-        public JobProfileDetail GetJobProfileDetailById(int id)
+        public JobProfileDetail GetJobProfileDetailById(long id)
         {
             return  _context.JobProfileDetail.Where(e => e.JobProfileDetailId == id).FirstOrDefault();
         }

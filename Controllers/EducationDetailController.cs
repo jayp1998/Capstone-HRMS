@@ -66,7 +66,7 @@ namespace Capstone_HRMS.Controllers
         [HttpPost("add")]
         public ActionResult<EducationDetail> AddEducationDetail(EducationDetail leaveApp)
         {
-            int temp = _EducationDetailService.AddEducationDetail(leaveApp);
+            long temp = _EducationDetailService.AddEducationDetail(leaveApp);
             if (temp > 0)
             {
                 return CreatedAtAction(nameof(leaveApp), new { id = temp }, leaveApp);

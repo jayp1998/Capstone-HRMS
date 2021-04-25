@@ -5,15 +5,15 @@ namespace Capstone_HRMS.Data.Services
 {
     public interface IJobProfileDetailService
     {
-        int AddJobProfileDetail(JobProfileDetail d);
+        long AddJobProfileDetail(JobProfileDetail d);
 
         JobProfileDetail UpdateJobProfileDetail(JobProfileDetail d);
 
-        bool DeleteJobProfileDetail(int id);
+        bool DeleteJobProfileDetail(long id);
 
         List<JobProfileDetail> GetAllJobProfileDetail();
 
-        JobProfileDetail GetJobProfileDetailById(int id);
+        JobProfileDetail GetJobProfileDetailById(long id);
 
         List<JobProfileDetail> GetJobProfileDetailByEmpID(long id);
 

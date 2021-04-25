@@ -5,15 +5,15 @@ namespace Capstone_HRMS.Data.Services
 {
     public interface IEducationDetailService
     {
-        int AddEducationDetail(EducationDetail d);
+        long AddEducationDetail(EducationDetail d);
 
         EducationDetail UpdateEducationDetail(EducationDetail d);
 
-        bool DeleteEducationDetail(int id);
+        bool DeleteEducationDetail(long id);
 
         List<EducationDetail> GetAllEducationDetail();
 
-        EducationDetail GetEducationDetailById(int id);
+        EducationDetail GetEducationDetailById(long id);
 
         List<EducationDetail> GetEducationDetailByEmpID(long id);
 
