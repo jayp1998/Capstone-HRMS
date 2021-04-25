@@ -8,6 +8,9 @@ export default class SearchData extends Component {
     render() {
         return (
             <div className="card shadow mb-4">
+                <div className="card-header py-3">
+                    <h6 className="m-0 font-weight-bold text-primary">SEARCH EMPLOYEE</h6>
+                </div>
                 <form className="col-md-12">
                     <br/>
                     <br/>
