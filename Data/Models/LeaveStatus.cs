@@ -10,6 +10,9 @@ namespace HRMS_Project.Data.Models
     {
         [Key]
         public int LeaveStatusId { get; set; }
+
+        [Required]
+        [StringLength(100)]
         public string Status { get; set; }
 
         public virtual ICollection<LeaveApplication> LeaveApplication { get; set; }

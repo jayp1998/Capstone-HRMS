@@ -71,6 +71,10 @@ namespace HRMS_Project.Data.Services
              var result = GetLeaveStatusById(d.LeaveStatusId);
             if (result != null)
             {
+                if (result.Status != d.Status && LeaveStatusExists(d.Status))
+                {
+                    return null;
+                }
                 result.Status = d.Status;
 
                 _context.Entry(result).State = EntityState.Modified;
