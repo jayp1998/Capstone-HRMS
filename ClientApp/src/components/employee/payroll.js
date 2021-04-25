@@ -33,8 +33,7 @@ export class Payroll extends Component {
                                     </div>
                                 </div>
                             </div>
-                        </div><br/>
-
+                        </div>
                     </div>
                     <div className="d-flex p-2 justify-content-center">
                         <Pdf targetRef={ref} filename="Invoice.pdf">

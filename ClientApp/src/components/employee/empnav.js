@@ -9,7 +9,7 @@ export default class EMPNAV extends Component {
 
     render() {
         return (
-            <nav className="admin__nav">
+            <nav className="admin__nav col-auto">
                 <ul className="menu">
                     <li className="menu__title">Directories:</li>
                     <br/>
