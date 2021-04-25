@@ -9,14 +9,27 @@ namespace HRMS_Project.Data.Models
 {
     public class JobProfileDetail
     {
+        [Required]
         [Key]
         public int JobProfileDetailId { get; set; }
 
+        [Required]
         [ForeignKey("EmployeeId")]
         public int EmployeeId { get; set; }
+        
+        [Required]
         public int ReportsTo { get; set; }
+
+        [Required]
+        [DataType(DataType.Date)]
         public DateTime HireDate { get; set; }
+
+        [Required]
+        [DataType(DataType.Date)]
         public DateTime? ProbationaryPeriodStartDate { get; set; }
+
+        [Required]
+        [DataType(DataType.Date)]
         public DateTime? ProbationaryPeriodEndDate { get; set; }
     }
 }
