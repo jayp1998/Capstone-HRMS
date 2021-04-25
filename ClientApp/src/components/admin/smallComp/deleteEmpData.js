@@ -9,16 +9,19 @@ export default class DeleteEmpData extends Component {
         return (
             <div className="card shadow mb-4">
                 <form className="col-md-12">
+                    <br/>
+                    <br/>
                     <div className="input-group col-md-4">
-                        <input type="text" className="form-control bg-light border-0 small" placeholder="Search for..."
+                        <input type="text" className="form-control bg-light border-2 large" placeholder="Search for..."
                                aria-label="Search" aria-describedby="basic-addon2" />
                         <div className="input-group-append">
-                            <button className="btn btn-primary" type="button">
+                            <button className="btn btn-info" type="button">
                                 <i className="fas fa-search fa-sm"/>
                             </button>
                         </div>
                     </div>
-
+                    <br/>
+                    <br/>
                     <div className="card-header py-3">
                         <h6 className="m-0 font-weight-bold text-primary">RESULTS</h6>
                     </div>

@@ -11231,3 +11231,10 @@ footer.sticky-footer .copyright {
 body.sidebar-toggled footer.sticky-footer {
   width: 100%;
 }
+.form-select{
+  margin: 10px;
+  color: #2c9faf;
+  font-size: 20px;
+  width: 150px;
+  height:25px;
+}

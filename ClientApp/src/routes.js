@@ -7,6 +7,7 @@ const addEmp = React.lazy(() => import('./components/admin/addEmp'));
 const findEmp = React.lazy(() => import('./components/admin/findEmp'));
 const delEmp = React.lazy(() => import('./components/admin/delEmp'));
 const schedule = React.lazy(()=>import('./components/admin/schedule'));
+const leaveManagement = React.lazy(()=>import('./components/admin/leaveManagement'));
 //const messagefromemployee = React.lazy(()=>import('./components/admin/messageList'));
 
 
@@ -28,6 +29,8 @@ const routes = [
     { path: '/findEmp', name: 'findEmp', component: findEmp },
     { path: '/delEmp', name: 'delEmp', component: delEmp },
     { path: '/schedule', name: 'schedule', component: schedule },
+    { path: '/leaveManagement', name: 'schedule', component: leaveManagement },
+
     //{ path: '/message', name: 'message', component: messagefromemployee},
 
     // EMPLOYEE SECTIONS ROUTES

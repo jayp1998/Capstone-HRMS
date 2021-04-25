@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-
-import {Layout} from './components/Layout';
 import {loginPage} from './components/login/loginPage';
 import {resetPassword} from "./components/login/resetPassword";
 import { Switch, Route } from 'react-router-dom';
@@ -11,6 +9,7 @@ import {addEmp} from './components/admin/addEmp';
 import {findEmp} from './components/admin/findEmp';
 import {delEmp} from './components/admin/delEmp';
 import {schedule} from "./components/admin/schedule";
+import {LeaveManagement} from "./components/admin/leaveManagement";
 //import {MessageList} from './components/admin/messageList'
 //IMPORTS FOR EMPLOYEE PANEL
 import {empIndex} from './components/employee/empIndex';
@@ -35,6 +34,7 @@ export default class App extends Component {
                 <Route path='/findEmp' component={findEmp} />
                 <Route path='/delEmp' component={delEmp} />
                 <Route path='/schedule' component={schedule}/>
+                <Route path='/leaveManagement' component={LeaveManagement}/>
 
                 <Route path='/empIndex' component={empIndex} />
                 <Route path='/payroll' component={Payroll} />
