@@ -12,13 +12,30 @@ namespace HRMS_Project.Data.Models
         [Key]
         public int EducationDetailId { get; set; }
 
+         [Required]  
         [ForeignKey("EmployeeId")]
         public int EmployeeId { get; set; }
+
+         [Required] 
+         [StringLength(100)] 
         public string UniversityName { get; set; }
+
+         [Required]  
+         [StringLength(200)]
         public string DegreeName { get; set; }
+
+         [Required] 
+         [StringLength(200)] 
         public string Specialization { get; set; }
+
+         [Required]  
+         [StringLength(100)]
         public string Gpa { get; set; }
+
+        [DataType(DataType.Date)]
         public DateTime? StartDate { get; set; }
+
+        [DataType(DataType.Date)]
         public DateTime? EndDate { get; set; }
     }
 }
