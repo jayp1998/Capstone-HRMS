@@ -69,7 +69,7 @@ namespace Capstone_HRMS.Data.Services
            var result = GetLeaveApplicationById(app.LeaveApplicationId);
             if (result != null)
             {
-                 if (result.EmployeeId != app.EmployeeId && LeaveApplicationExists(app) )
+                 if ((result.EmployeeId != app.EmployeeId || result.FromDate == app.FromDate) && LeaveApplicationExists(app) )
                 {
                     return null;
                 }
