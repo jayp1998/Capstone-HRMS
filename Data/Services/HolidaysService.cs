@@ -71,6 +71,10 @@ namespace Capstone_HRMS.Data.Services
              var result = GetHolidaysById(d.HolidaysId);
             if (result != null)
             {
+                 if (result.Title != d.Title && HolidaysExists(d.Title))
+                {
+                    return null;
+                }
                 result.Title = d.Title;
                 result.HolidayDate = d.HolidayDate;
                 result.Day = d.Day;

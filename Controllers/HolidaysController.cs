@@ -68,7 +68,7 @@ namespace Capstone_HRMS.Controllers
             }
             else
             {
-                return UnprocessableEntity("Holiday does not exist");
+                return UnprocessableEntity("Holiday ID does not exist or same Holiday already exist ");
             }
         }
 
