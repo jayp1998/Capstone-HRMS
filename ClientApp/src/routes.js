@@ -20,6 +20,8 @@ const leave = React.lazy(()=>import('./components/employee/leave'));
 const payroll = React.lazy(()=>import('./components/employee/payroll'));
 const holidays = React.lazy(() => import('./components/employee/holidays'));
 const MainSchedule = React.lazy(() => import('./components/employee/MainSchedule'));
+const MyProfile = React.lazy(() => import('./components/employee/myprofile'));
+const EditProfile = React.lazy(() => import('./components/employee/editprofile'));
 
 const resetPassword  = React.lazy(() => import('./components/login/resetPassword'));
 
@@ -44,7 +46,9 @@ const routes = [
     { path: '/leave', name: 'empIndex', component: leave },
     { path: '/payroll', name: 'empIndex', component: payroll },
     { path: '/holidays', name: 'holidays', component: holidays },
-    { path: '/myschedule', name: 'holidays', component: MainSchedule },
+    { path: '/myprofile', name: 'holidays', component: MyProfile },
+    { path: '/myprofile', name: 'holidays', component: MyProfile },
+    { path: '/editprofile', name: 'holidays', component: EditProfile },
 
 
 ];

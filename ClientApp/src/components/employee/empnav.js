@@ -14,7 +14,10 @@ export default class EMPNAV extends Component {
                     <li className="menu__title">Directories:</li>
                     <br/>
                     <li className="menu__item">
-                        <Link className="menu__link" to="/empIndex">My Profile</Link>
+                        <Link className="menu__link" to="/empIndex">Home</Link>
+                    </li>
+                    <li className="menu__item">
+                        <Link className="menu__link" to="/myprofile">My Profile</Link>
                     </li>
                         <li className="menu__item">
                             <Link className="menu__link" to="/payroll">Payroll</Link>

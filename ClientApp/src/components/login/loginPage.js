@@ -13,7 +13,7 @@ export class loginPage extends Component {
         super(props);
 
         this.validateForm = this.validateForm.bind(this);
-        this.adminButtonClicked = this.adminButtonClicked.bind(this);
+       // this.adminButtonClicked = this.adminButtonClicked.bind(this);
         this.employeeButtonClicked = this.employeeButtonClicked.bind(this);
         this.setEmail = this.setEmail.bind(this);
         this.setPassword = this.setPassword.bind(this);
@@ -46,24 +46,6 @@ export class loginPage extends Component {
 
     }
 
-    adminButtonClicked(e) {
-        e.preventDefault();
-        let loginObject = {
-            email: this.state.email,
-            password: this.state.password,
-        }
-        axios.post("api/Users/token/", loginObject).then(result => {
-            if (result.status === 200) {
-                console.log(result);
-                this.props.history.push("/adminIndex");
-            } else {
-                this.props.history.push("/");
-                console.log("Login Failed");
-            }
-            console.log(result);
-        })
-    }
-
     employeeButtonClicked(e) {
 
         e.preventDefault();
@@ -72,7 +54,7 @@ export class loginPage extends Component {
             username: this.state.username,
             password: this.state.password,
         }
-        axios.post("api/Users/token/", loginObject).then(result => {
+        axios.post("/api/users/login", loginObject).then(result => {
             if (result.status === 200) {
                 localStorage.setItem('currentUser', JSON.stringify(result.data));
                 console.log("Login Completed");

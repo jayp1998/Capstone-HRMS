@@ -23,6 +23,18 @@ export default class AddEmpData extends Component {
                                    placeholder="Last Name"/>
                         </div>
                     </div>
+                    <div className="form-group row">
+                        <div className="col-sm-6">
+                            <input type="text" className="form-control form-control-user"
+                                   id="exampleLastName"
+                                   placeholder="User Name"/>
+                        </div>
+                        <div className="col-sm-6 mb-3 mb-sm-0">
+                            <input type="text" className="form-control form-control-user"
+                                   id="exampleFirstName"
+                                   placeholder="Phone No"/>
+                        </div>
+                    </div>
                     <div className="form-group">
                         <input type="email" className="form-control form-control-user"
                                id="exampleInputEmail"
@@ -32,7 +44,12 @@ export default class AddEmpData extends Component {
                         <div className="col-sm-6 mb-3 mb-sm-0">
                             <input type="text" className="form-control form-control-user"
                                    id="exampleFirstName"
-                                   placeholder="Phone No"/>
+                                   placeholder="Password"/>
+                        </div>
+                        <div className="col-sm-6">
+                            <input type="text" className="form-control form-control-user"
+                                   id="exampleLastName"
+                                   placeholder="Confirm Password"/>
                         </div>
                     </div>
                     <div className="form-group row">
