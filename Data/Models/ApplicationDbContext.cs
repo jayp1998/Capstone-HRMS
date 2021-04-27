@@ -25,6 +25,7 @@ namespace HRMS_Project.Data.Models
         public DbSet<LeaveType> LeaveType { get; set; }
         public DbSet<Holidays> Holidays { get; set; }
         public DbSet<Attendance> Attendance { get; set; }
+        public DbSet<EmployeeSalary> EmployeeSalary { get; set; }
 
     }
 }

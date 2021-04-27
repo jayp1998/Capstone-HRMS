@@ -82,6 +82,7 @@ namespace HRMS_Project.Data.Models
         public virtual ICollection<JobProfileDetail> JobProfileDetail { get; set; }
         public virtual ICollection<LeaveApplication> LeaveApplication { get; set; }
         public virtual ICollection<Attendance> Attendance { get; set; }
+        public virtual ICollection<EmployeeSalary> EmployeeSalary { get; set; }
         
     }
 }

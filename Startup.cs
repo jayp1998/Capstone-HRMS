@@ -46,6 +46,7 @@ namespace HRMS_Project
             services.AddTransient<IAttendanceService, AttendanceService>();
             services.AddTransient<IJobProfileDetailService, JobProfileDetailService>();
             services.AddTransient<IEducationDetailService, EducationDetailService>();
+            services.AddTransient<IEmployeeSalaryService, EmployeeSalaryService>();
 
             //Adding DB Context with MSSQL
             //services.AddDbContext<HRMSContext>(options => options.UseSqlServer("Data Source=LAPTOP-Q2VFICDK;Initial Catalog=HRMS;Integrated Security=True"));
