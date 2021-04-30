@@ -1,5 +1,5 @@
 {
-  "FilePath": "e:\\Capstone-HRMS\\HRMS-Project.csproj",
+  "FilePath": "e:\\Final Project\\Capstone-HRMS\\HRMS-Project.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "5.0",
@@ -15619,12 +15619,12 @@
   "RootNamespace": "HRMS_Project",
   "Documents": [
     {
-      "FilePath": "e:\\Capstone-HRMS\\Pages\\_ViewImports.cshtml",
+      "FilePath": "e:\\Final Project\\Capstone-HRMS\\Pages\\_ViewImports.cshtml",
       "TargetPath": "Pages\\_ViewImports.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "e:\\Capstone-HRMS\\Pages\\Error.cshtml",
+      "FilePath": "e:\\Final Project\\Capstone-HRMS\\Pages\\Error.cshtml",
       "TargetPath": "Pages\\Error.cshtml",
       "FileKind": "mvc"
     }

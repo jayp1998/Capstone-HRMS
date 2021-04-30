@@ -132,6 +132,7 @@ namespace HRMS_Project
 
                 if (env.IsDevelopment())
                 {
+                    spa.Options.StartupTimeout = TimeSpan.FromSeconds(120);
                     spa.UseReactDevelopmentServer(npmScript: "start");
                 }
             });
